@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+    </script>
+</head>
+<body>
+<h1>content is loading...</h1>
+<p id="demo" align="center"></p>
+<script>
+document.getElementById("demo").innerHTML="请稍等或点击右上刷新";
+function javaCallJs(s)
+{
+document.body.innerHTML="";
+var i=0;
+var list="";
+var arr = s.split("^^");
+for(i=0;i<arr.length-1;i=i+2)
+{
+list+="<p align=\"center\"><img src="+arr[i]+" /></p>";
+list+="<p align=\"center\">"+arr[i+1]+"</p>";
+}
+document.write(list);
+}
+
+$("img").each(function(){
+	var c =$(this).width();
+	var maxWidth = $(window).width();//屏幕宽度
+	if(c>maxWidth){
+		$(this).width(maxWidth)
+	}
+});
+
+</script>
+
+</body>
+</html>

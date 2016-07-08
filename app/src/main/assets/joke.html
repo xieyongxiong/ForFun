@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html>
+<body >
+
+<h1>content is loading...</h1>
+
+<p id="demo" align="center"></p>
+
+<script>
+document.getElementById("demo").innerHTML="请稍等或点击右上刷新";
+
+function javaCallJs(s)
+{
+document.body.innerHTML="";
+var i=0;
+var list="";
+var arr = s.split("^^");
+for (i=0;i<arr.length-1;i++)
+{
+  list+="<li style=\"background:#ffcc99 ; font-size: 18px ; padding: 10px\">"+arr[i]+"</li>";
+  list+="<button onclick=\"saveJoke('"+arr[i]+"')\">收藏</button>"
+  list+="<br>";
+}
+list="<ol>"+list+"</ol>";
+document.write(list);
+}
+
+function refresh()
+{
+Android.refresh();
+}
+
+function saveJoke(name)
+{
+Android.saveJoke(name);
+}
+
+</script>
+
+</body>
+</html>
+
